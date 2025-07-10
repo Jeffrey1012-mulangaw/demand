@@ -108,14 +108,16 @@
     <thead>
       <tr>
         <th>Remarks</th>
-        <th>Main Depot</th>
+        <th>Main</th>
+        <th>Depot</th>
         <th>Stock Sufficiency</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td id="remarks"></td>
-        <td id="main_depot"></td>
+        <td id="main"></td>
+        <td id="depot"></td>
         <td id="stock_sufficiency"></td>
       </tr>
     </tbody>
@@ -125,12 +127,14 @@
   <table class="highlight">
     <thead>
       <tr>
-        <th>Request Quantity</th>
+        <th>Request</th>
+        <th>Quantity</th>
         <th>Stock Sufficiency</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td id="req_request"></td>
         <td id="req_qty"></td>
         <td id="req_stock_sufficiency"></td>
       </tr>
@@ -181,8 +185,9 @@
     const dynamicFields = [
       "reference_number", "date", "item_description", "status", "classification",
       "warehouse_capacity", "adw", "supplier", "fa_number", "fa_balance",
-      "fa_validity", "remarks", "main_depot", "stock_sufficiency",
-      "req_qty", "req_stock_sufficiency", "requestor_name", "requestor_position"
+      "fa_validity", "remarks", "main", "depot", "stock_sufficiency",
+      "req_request", "req_qty", "req_stock_sufficiency",
+      "requestor_name", "requestor_position"
     ];
 
     dynamicFields.forEach(field => {
