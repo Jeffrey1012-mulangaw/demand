@@ -7,54 +7,55 @@
     body {
       font-family: Tahoma, sans-serif;
       font-size: 10pt;
-      margin: 1in;
+      margin: 0.5in;
+    }
+    h2, h3, h4, p {
+      margin: 4px 0;
+    }
+    .highlight {
+      background-color: #e6e6e6;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 10px 0;
+      margin: 8px 0;
     }
     th, td {
       border: 1px solid black;
-      padding: 4px;
-      text-align: left;
-      height: 20px;
-    }
-    .center {
-      text-align: center;
+      padding: 4px 6px;
     }
     .section-title {
       font-weight: bold;
-      margin-top: 20px;
+      margin-top: 16px;
     }
-    .signature-section {
+    .signature-row {
       display: flex;
       justify-content: space-between;
-      margin-top: 40px;
+      margin-top: 20px;
     }
     .signature-block {
       width: 45%;
     }
-    .small-table td {
-      height: 25px;
+    .contract-table td {
+      height: 24px;
     }
   </style>
 </head>
 <body>
-  <div class="center">
-    <h3>FA/PO Monitoring 2023-2025</h3>
-    <p>WAREHOUSING AND DELIVERY DIVISION</p>
-    <p><strong>Reference No:</strong> <span id="reference_number"></span></p>
-    <h2>Demand and Replenishment Form</h2>
-    <p><strong>Date:</strong> <span id="date"></span></p>
-  </div>
+  <h3>WAREHOUSING AND DELIVERY DIVISION</h3>
+  <h2>Demand and Replenishment Form</h2>
+  <p><strong>Reference Number:</strong> <span id="reference_number"></span></p>
+  <p><strong>Date:</strong> <span id="date"></span></p>
 
-  <table>
+  <div class="section-title">Item Details</div>
+  <table class="highlight">
     <thead>
       <tr>
         <th>Item Description</th>
         <th>Status</th>
         <th>Classification</th>
+        <th>Warehouse Capacity</th>
+        <th>ADW</th>
       </tr>
     </thead>
     <tbody>
@@ -62,80 +63,74 @@
         <td id="item_description"></td>
         <td id="status"></td>
         <td id="classification"></td>
+        <td id="warehouse_capacity"></td>
+        <td id="adw"></td>
       </tr>
     </tbody>
   </table>
 
-  <table>
+  <div class="section-title">Contract Details</div>
+  <table class="highlight">
     <thead>
       <tr>
-        <th>Warehouse Capacity</th>
-        <th>ADW</th>
-        <th>FA Balance</th>
-        <th>FA Number</th>
         <th>Supplier</th>
+        <th>FA Number</th>
+        <th>FA Balance</th>
+        <th>FA Validity</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td id="warehouse_capacity"></td>
-        <td id="adw"></td>
-        <td id="fa_balance"></td>
-        <td id="fa_number"></td>
         <td id="supplier"></td>
+        <td id="fa_number"></td>
+        <td id="fa_balance"></td>
+        <td id="fa_validity"></td>
       </tr>
     </tbody>
   </table>
 
-  <h4>Due for Release</h4>
-  <table>
+  <div class="section-title">Remarks / Due for Release</div>
+  <table class="highlight">
     <thead>
       <tr>
-        <th>FA Validity</th>
-        <th>System Stock</th>
-        <th>Actual</th>
+        <th>Remarks</th>
         <th>Main Depot</th>
         <th>Stock Sufficiency</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td id="fa_validity"></td>
-        <td id="system_stock"></td>
-        <td id="actual"></td>
+        <td id="remarks"></td>
         <td id="main_depot"></td>
         <td id="stock_sufficiency"></td>
       </tr>
     </tbody>
   </table>
 
-  <p class="section-title">Remarks</p>
-  <p id="remarks">&nbsp;</p>
-
-  <p class="section-title">Requested Replenishment of Stock</p>
-  <table>
+  <div class="section-title">Requested Replenishment of Stock</div>
+  <table class="highlight">
     <thead>
       <tr>
-        <th>Date</th>
         <th>Request Quantity</th>
+        <th>Stock Sufficiency</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td id="req_date"></td>
         <td id="req_qty"></td>
+        <td id="req_stock_sufficiency"></td>
       </tr>
     </tbody>
   </table>
 
-  <div class="signature-section">
+  <div class="signature-row">
     <div class="signature-block">
-      <p>Requested by:</p>
-      <p id="requestor_name"><strong></strong></p>
-      <p id="requestor_position"></p>
+      <p><strong>Requested by:</strong></p>
+      <p id="requestor_name">&nbsp;</p>
+      <p id="requestor_position">&nbsp;</p>
     </div>
     <div class="signature-block">
-      <p>Approved by:</p>
+      <p><strong>Approved by:</strong></p>
       <p><strong>Samantha Grace E. Moscoso</strong></p>
       <p>Acting Director IV, Operations Office</p>
     </div>
@@ -144,13 +139,12 @@
   <p class="section-title">Reviewed by:</p>
   <p><strong>Catherine Ann D. Mirabel</strong><br>Chief, Warehousing and Delivery Division</p>
 
-  <p class="section-title">TO BE FILLED UP BY THE CONTRACT MANAGEMENT DIVISION</p>
-
-  <p>Conforme:</p>
+  <div class="section-title">TO BE FILLED UP BY THE CONTRACT MANAGEMENT DIVISION</div>
+  <p><strong>Conforme</strong></p>
   <p>Name and signature of authorized representative: ___________________________</p>
   <p>Date: ___________________________</p>
 
-  <table class="small-table">
+  <table class="contract-table">
     <thead>
       <tr>
         <th>Date</th>
@@ -159,8 +153,10 @@
         <th>Remarks</th>
       </tr>
     </thead>
-    <tbody id="cmd_table">
-      <!-- Rows dynamically inserted here -->
+    <tbody>
+      <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
     </tbody>
   </table>
 
@@ -170,31 +166,16 @@
     const urlParams = new URLSearchParams(window.location.search);
     const dynamicFields = [
       "reference_number", "date", "item_description", "status", "classification",
-      "warehouse_capacity", "adw", "fa_balance", "fa_number", "supplier",
-      "fa_validity", "system_stock", "actual", "main_depot", "stock_sufficiency",
-      "remarks", "req_date", "req_qty", "requestor_name", "requestor_position"
+      "warehouse_capacity", "adw", "supplier", "fa_number", "fa_balance",
+      "fa_validity", "remarks", "main_depot", "stock_sufficiency",
+      "req_qty", "req_stock_sufficiency", "requestor_name", "requestor_position"
     ];
 
     dynamicFields.forEach(field => {
-      const el = document.getElementById(field);
-      if (el) {
-        el.textContent = decodeURIComponent(urlParams.get(field) || "");
-      }
+      const value = urlParams.get(field) || "";
+      document.getElementById(field).textContent = decodeURIComponent(value);
     });
-
-    const cmdRowsRaw = urlParams.get("cmd_rows") || "";
-    const cmdParts = decodeURIComponent(cmdRowsRaw).split("@");
-    const cmdTable = document.getElementById("cmd_table");
-
-    for (let i = 0; i < cmdParts.length; i += 4) {
-      const row = document.createElement("tr");
-      for (let j = 0; j < 4; j++) {
-        const cell = document.createElement("td");
-        cell.textContent = cmdParts[i + j] || "";
-        row.appendChild(cell);
-      }
-      cmdTable.appendChild(row);
-    }
   </script>
 </body>
 </html>
+
