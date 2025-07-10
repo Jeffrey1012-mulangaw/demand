@@ -7,7 +7,7 @@
     body {
       font-family: Tahoma, sans-serif;
       font-size: 10pt;
-      margin: 0.5in;
+      margin: 0.5in 0.25in;
     }
     h2, h3, h4, p {
       margin: 4px 0;
@@ -19,10 +19,12 @@
       width: 100%;
       border-collapse: collapse;
       margin: 8px 0;
+      table-layout: fixed;
     }
     th, td {
       border: 1px solid black;
       padding: 4px 6px;
+      word-wrap: break-word;
     }
     .section-title {
       font-weight: bold;
@@ -31,10 +33,13 @@
     .signature-row {
       display: flex;
       justify-content: space-between;
-      margin-top: 20px;
+      margin-top: 40px;
     }
     .signature-block {
       width: 45%;
+    }
+    .signature-block p:nth-child(2) {
+      margin-top: 40px;
     }
     .contract-table td {
       height: 24px;
@@ -137,7 +142,7 @@
   </div>
 
   <p class="section-title">Reviewed by:</p>
-  <p><strong>Catherine Ann D. Mirabel</strong><br>Chief, Warehousing and Delivery Division</p>
+  <p style="margin-top: 40px;"><strong>Catherine Ann D. Mirabel</strong><br>Chief, Warehousing and Delivery Division</p>
 
   <div class="section-title">TO BE FILLED UP BY THE CONTRACT MANAGEMENT DIVISION</div>
   <p><strong>Conforme</strong></p>
@@ -178,4 +183,3 @@
   </script>
 </body>
 </html>
-
