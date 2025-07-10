@@ -23,7 +23,7 @@
     }
     th, td {
       border: 1px solid black;
-      padding: 4px 6px;
+      padding: 4px 4px;
       word-wrap: break-word;
     }
     .section-title {
@@ -42,8 +42,17 @@
       margin-top: 40px;
     }
     .contract-table td {
-      height: 24px;
+      height: 18px;
+      font-size: 9pt;
     }
+    .contract-table th {
+      font-size: 9pt;
+    }
+    .fixed-table th:nth-child(1) { width: 25%; }
+    .fixed-table th:nth-child(2) { width: 15%; }
+    .fixed-table th:nth-child(3) { width: 20%; }
+    .fixed-table th:nth-child(4) { width: 20%; }
+    .fixed-table th:nth-child(5) { width: 20%; }
   </style>
 </head>
 <body>
@@ -53,7 +62,7 @@
   <p><strong>Date:</strong> <span id="date"></span></p>
 
   <div class="section-title">Item Details</div>
-  <table class="highlight">
+  <table class="highlight fixed-table">
     <thead>
       <tr>
         <th>Item Description</th>
@@ -136,7 +145,7 @@
     </div>
     <div class="signature-block">
       <p><strong>Approved by:</strong></p>
-      <p><strong>Samantha Grace E. Moscoso</strong></p>
+      <p style="margin-top: 40px;"><strong>Samantha Grace E. Moscoso</strong></p>
       <p>Acting Director IV, Operations Office</p>
     </div>
   </div>
